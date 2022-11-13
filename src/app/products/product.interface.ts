@@ -5,7 +5,7 @@ export interface Product {
   id: string;
   price: number;
   title: string;
-  imgUrl: string;
+  imgurl: string;
 }
 
 export interface ProductCheckout extends Product {
