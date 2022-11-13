@@ -12,7 +12,7 @@ import { ApiService } from '../core/api.service';
 })
 export class ProductsService extends ApiService {
   createNewProduct(product: Product): Observable<Product> {
-    const url = this.getUrl('product', 'products');
+    const url = this.getUrl('bff', 'products');
 
     return this.http.post<Product>(url, product);
   }
@@ -30,7 +30,7 @@ export class ProductsService extends ApiService {
   }
 
   getProductById(id: string): Observable<Product | null> {
-    const url = this.getUrl('product', `products/${id}`);
+    const url = this.getUrl('bff', `products/${id}`);
 
     return this.http
       .get<{ product: Product }>(url)
@@ -38,7 +38,7 @@ export class ProductsService extends ApiService {
   }
 
   getProducts(): Observable<Array<Product>> {
-    const url = this.getUrl('product', 'products');
+    const url = this.getUrl('bff', 'products');
 
     return this.http
       .get<ProductListResponse>(url)
